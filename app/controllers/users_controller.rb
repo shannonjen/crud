@@ -9,14 +9,14 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    redirect_to user_path @user
+    redirect_to users_url
   end
 
   def destroy
     puts "PARAMS ARE" + params.inspect
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to users
+    redirect_to users_url
   end
 
   private
